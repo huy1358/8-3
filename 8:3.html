@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ngày 8/3 by huythanh</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background-color: #ffe4e1;
+        }
+
+        h1 {
+            font-size: 6vw;
+            color: #d63384;
+            margin-top: 8vw;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 4.5vw;
+            font-weight: bold;
+            color: #ff1493;
+            margin-top: 3vw;
+            padding: 0 5vw;
+        }
+
+        .creator {
+            font-size: 3vw;
+            color: #555;
+            margin-top: 3vw;
+            font-style: italic;
+        }
+
+        .button {
+            padding: 3vw 6vw;
+            font-size: 4vw;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 5vw;
+            border-radius: 30px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px rgba(255, 105, 180, 0.6);
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            background-color: #ff1493;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 5vw;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-50px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .flower-image, .extra-image {
+            width: 75vw;
+            max-width: 250px;
+            margin-top: 4vw;
+            border-radius: 10px;
+        }
+
+        .music {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="typing">Chúc Tất Cả Các Bạn</h1>
+    <div class="message">Chúc tất cả các bạn có một ngày 8/3 thật vui vẻ, hạnh phúc và luôn xinh đẹp! 💖</div>
+    
+    
+
+    <button class="button" onclick="startCelebration()">Gửi lời chúc 💐</button>
+    
+    <div class="creator">Được tạo bởi: Phạm Thành Huy</div>
+    
+    <audio class="music" id="bg-music" src="https://example.com/music.mp3" loop></audio>
+    
+    <script>
+        function startCelebration() {
+            document.getElementById("bg-music").play();
+            for (let i = 0; i < 25; i++) {
+                let flower = document.createElement("div");
+                flower.innerHTML = "🌸";
+                flower.classList.add("flower");
+                document.body.appendChild(flower);
+                
+                flower.style.left = Math.random() * window.innerWidth + "px";
+                flower.style.animationDuration = (Math.random() * 5 + 3) + "s";
+                
+                setTimeout(() => {
+                    flower.remove();
+                }, 7000);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
